@@ -1,0 +1,119 @@
+body {
+  background-color: #d349e9;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #ffffff;
+  color: #ab62e0 ;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+nav a {
+  padding: 8px 15px;
+  border-radius: 20px;
+  display:inline-table;
+background-color: #ab62e0;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin: 0 30px;
+  text-align:center ;
+  justify-content: space-between;
+  
+
+}
+nav a:hover {
+  
+  text-decoration: underline;
+}
+  
+
+section {
+  padding: 80px 20px 40px;
+  margin-top: 40px;
+}
+
+
+#home {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#home img {
+  border-radius: 10px;
+}
+button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+button:hover {
+  background: #555;
+}
+
+
+.about-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.skills {
+  display: flex;
+  gap: 10px;
+}
+.skills div {
+  background: #eee;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.project {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+.project:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+.achieve {
+  border-left: 5px solid green;
+  background: #f9f9f9;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+
+form {
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+input, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+form button {
+  width: 100%;
+}
+#contact p {
+  text-align: center;
+  margin-top: 20px;
+}
+.social-links{
+
+}
