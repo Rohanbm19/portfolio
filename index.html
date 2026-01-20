@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Home - My Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <header>
     <h1>My Portfolio</h1>
     <nav>
-      <a href="home.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
       <a href="achievements.html">Achievements</a>
@@ -23,13 +24,30 @@
   <section id="home">
     <div class="text">
       <h1>Welcome to My Portfolio</h1>
-      <h3> I am pursuing a B.E. in Information Science at Sahyadri College of Engineering and Management, with a keen interest in technology, problem-solving, and continuous learning.</h3>
-      <button>Explore My Work</button>
+      <h3>I am pursuing a B.E. in Information Science at Sahyadri College of Engineering and Management, with a keen interest in technology, problem-solving, and continuous learning.</h3>
+      <button onclick="window.location.href='about.html'">Explore My Work</button>
     </div>
-    <img src="rohan.jpg" alt="Profile" height="300" width="500">
+    <img src="rohan.jpg" alt="Profile Picture" height="300" width="500">
   </section>
 
+  <footer>
+    <p>&copy; 2024 My Portfolio. All rights reserved. | Designed & Built with <span style="color: #1976D2;">♥</span> by <a href="#">Rohan</a></p>
+  </footer>
 
+  <script>
+    // Highlight active page in navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

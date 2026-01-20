@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Portfolio</title>
+  <title>Projects - My Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
@@ -12,28 +13,194 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
+      <a href="projects.html" class="active">Projects</a>
       <a href="achievements.html">Achievements</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <section class="projects-grid">
+  <section id="projects" class="projects-grid">
     <div class="project-card">
       <h3>Fake News Detector</h3>
-      <p>A web app that detects fake news using APIs and JS.</p>
-      <a href="#">View Project</a>
+      <p>A web application that detects fake news using machine learning APIs and JavaScript. This project helps users identify misinformation by analyzing article content and comparing it against reliable sources.</p>
+      <button class="view-btn" onclick="openModal(0)">View Project</button>
     </div>
     <div class="project-card">
-      <h3>Digital Dice</h3>
-      <p>7-segment dice using 555 Timer and CD4017 counter.</p>
-      <a href="#">View Project</a>
+      <h3>Todo Application</h3>
+      <p>A full-featured todo application with add, edit, delete, and filter functionality. Built with responsive design principles to work seamlessly across all devices.</p>
+      <button class="view-btn" onclick="openModal(1)">View Project</button>
     </div>
     <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>This portfolio showcasing my work and skills.</p>
-      <a href="#">View Project</a>
+      <h3>Money Manager</h3>
+      <p>A smart personal finance application that helps users track expenses, manage budgets, and plan their financial goals. This application provides comprehensive insights into spending patterns and wealth management.</p>
+      <button class="view-btn" onclick="openModal(2)">View Project</button>
+    </div>
+    <div class="project-card">
+      <h3>Namma Kudla Website</h3>
+      <p>An innovative platform for managing and exploring the lore and history of various projects and systems. This application helps teams maintain comprehensive documentation and historical records.</p>
+      <button class="view-btn" onclick="openModal(3)">View Project</button>
+    </div>
+    <div class="project-card empty-card">
+      <div class="placeholder-content">
+        <i class="fas fa-plus"></i>
+        <h3>Add New Project</h3>
+        <p>Click to add your next project</p>
+      </div>
+    </div>
+    <div class="project-card empty-card">
+      <div class="placeholder-content">
+        <i class="fas fa-plus"></i>
+        <h3>Add New Project</h3>
+        <p>Click to add your next project</p>
+      </div>
+    </div>
+    <div class="project-card empty-card">
+      <div class="placeholder-content">
+        <i class="fas fa-plus"></i>
+        <h3>Add New Project</h3>
+        <p>Click to add your next project</p>
+      </div>
+    </div>
+    <div class="project-card empty-card">
+      <div class="placeholder-content">
+        <i class="fas fa-plus"></i>
+        <h3>Add New Project</h3>
+        <p>Click to add your next project</p>
+      </div>
     </div>
   </section>
+
+  <!-- Modal for Project Details -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <div class="modal-body">
+        <h2 id="modalTitle"></h2>
+        <div class="modal-images">
+          <img id="modalImage" src="" alt="Project Image">
+        </div>
+        <div class="modal-description">
+          <h3>Project Details</h3>
+          <p id="modalDescription"></p>
+          <h3>Features</h3>
+          <ul id="modalFeatures"></ul>
+          <h3>Technologies Used</h3>
+          <p id="modalTech"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 My Portfolio. All rights reserved. | Designed & Built with <span style="color: #1976D2;">♥</span> by <a href="#">Rohan</a></p>
+  </footer>
+
+  <script>
+    const projectData = [
+      {
+        title: "Fake News Detector",
+        image: "fake.png",
+        description: "A sophisticated web application that leverages machine learning APIs and JavaScript to detect fake news with high accuracy. The application analyzes article content, checks credibility indicators, and compares information against reliable fact-checking databases.",
+        features: [
+          "Real-time article analysis",
+          "ML-powered fake news detection",
+          "Credibility scoring system",
+          "Multi-source fact-checking",
+          "User-friendly interface",
+          "Detailed analysis reports"
+        ],
+        tech: "JavaScript, React, APIs, Machine Learning"
+      },
+      {
+        title: "Todo Application",
+        image: "todo.png",
+        description: "A comprehensive todo application with full CRUD functionality. Users can create, read, update, and delete tasks with features for filtering, sorting, and priority management.",
+        features: [
+          "Add, edit, delete tasks",
+          "Filter by status",
+          "Priority levels",
+          "Due date tracking",
+          "Local storage persistence",
+          "Search functionality"
+        ],
+        tech: "HTML5, CSS3, JavaScript, LocalStorage"
+      },
+      {
+        title: "Money Manager",
+        image: "manager.png",
+        description: "A comprehensive personal finance management application designed to help users take control of their money. This application enables users to track income and expenses, create budgets, set financial goals, and gain insights into their spending habits with detailed analytics.",
+        features: [
+          "Track income and expenses",
+          "Budget creation and management",
+          "Financial goal setting",
+          "Expense categorization",
+          "Spending analytics and reports",
+          "Bank account integration",
+          "Transaction history",
+          "Monthly and yearly summaries"
+        ],
+        tech: "JavaScript, HTML5, CSS3, Database"
+      },
+      {
+        title: "Managlore",
+        image: "namma.png",
+        description: "Managlore is an innovative knowledge management platform designed to preserve and share the rich history and documentation of your projects. It serves as a centralized repository for project lore, historical records, and organizational knowledge.",
+        features: [
+          "Comprehensive documentation system",
+          "Historical record preservation",
+          "Version control for documents",
+          "Search and discovery tools",
+          "Knowledge base organization",
+          "Team collaboration features",
+          "Export and backup capabilities",
+          "Access control and permissions"
+        ],
+        tech: "JavaScript, HTML5, CSS3, Knowledge Management Systems"
+      }
+    ];
+
+    function openModal(index) {
+      const project = projectData[index];
+      document.getElementById('modalTitle').textContent = project.title;
+      document.getElementById('modalImage').src = project.image;
+      document.getElementById('modalDescription').textContent = project.description;
+      document.getElementById('modalTech').textContent = project.tech;
+      
+      const featuresList = document.getElementById('modalFeatures');
+      featuresList.innerHTML = '';
+      project.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featuresList.appendChild(li);
+      });
+      
+      document.getElementById('projectModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('projectModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('projectModal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
