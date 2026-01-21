@@ -49,29 +49,76 @@
   <section class="certificates-section">
     <h2 style="text-align: center; margin-bottom: 30px; font-size: 2em;">Certificates & Credentials</h2>
     <div class="certificates-grid">
-      <div class="certificate-card">
+      <div class="certificate-card" onclick="openCertModal(0)" style="cursor: pointer;">
         <img src="nitk.png" alt="JavaScript Mastery Certificate">
       </div>
-      <div class="certificate-card">
-        <img src="r.jpeg" alt="React Expert Certificate">
-      </div>
-      <div class="certificate-card">
+      
+      <div class="certificate-card" onclick="openCertModal(2)" style="cursor: pointer;">
         <img src="tiara.jpg" alt="Full Stack Development Certificate">
       </div>
-      <div class="certificate-card">
+      <div class="certificate-card" onclick="openCertModal(3)" style="cursor: pointer;">
         <img src="cer.jpg" alt="Cloud Computing Certificate">
       </div>
-      <div class="certificate-card">
+      <div class="certificate-card" onclick="openCertModal(4)" style="cursor: pointer;">
         <img src="sosc.jpeg" alt="Techsprint Hackathon Certificate">
       </div>
     </div>
   </section>
+
+  <!-- Modal for Certificate Details -->
+  <div id="certModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeCertModal()">&times;</button>
+      <div class="modal-body">
+        <div class="modal-images">
+          <img id="certImage" src="" alt="Certificate Image">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2024 My Portfolio. All rights reserved. | Designed & Built with <span style="color: #1976D2;">♥</span> by <a href="#">Rohan</a></p>
   </footer>
 
   <script>
+    const certificateData = [
+      {
+        image: "nitk.png"
+      },
+      {
+        image: "r.jpeg"
+      },
+      {
+        image: "tiara.jpg"
+      },
+      {
+        image: "cer.jpg"
+      },
+      {
+        image: "sosc.jpeg"
+      }
+    ];
+
+    function openCertModal(index) {
+      const cert = certificateData[index];
+      document.getElementById('certImage').src = cert.image;
+      document.getElementById('certModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCertModal() {
+      document.getElementById('certModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('certModal');
+      if (event.target == modal) {
+        closeCertModal();
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
       document.querySelectorAll('nav a').forEach(link => {
