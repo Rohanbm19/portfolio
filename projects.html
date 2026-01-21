@@ -12,7 +12,6 @@
     <h2>My Portfolio</h2>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="projects.html" class="active">Projects</a>
       <a href="achievements.html">Achievements</a>
       <a href="contact.html">Contact</a>
@@ -22,50 +21,23 @@
   <section id="projects" class="projects-grid">
     <div class="project-card">
       <h3>Fake News Detector</h3>
-      <p>A web application that detects fake news using machine learning APIs and JavaScript. This project helps users identify misinformation by analyzing article content and comparing it against reliable sources.</p>
-      <button class="view-btn" onclick="openModal(0)">View Project</button>
-    </div>
-    <div class="project-card">
-      <h3>Todo Application</h3>
-      <p>A full-featured todo application with add, edit, delete, and filter functionality. Built with responsive design principles to work seamlessly across all devices.</p>
-      <button class="view-btn" onclick="openModal(1)">View Project</button>
+      <div class="project-buttons">
+        <button class="view-btn" onclick="window.open(' https://rohanbm19.github.io/gitfakenews/')">View Project</button>
+        <button class="about-btn" onclick="openModal(0)">About</button>
+      </div>
     </div>
     <div class="project-card">
       <h3>Money Manager</h3>
-      <p>A smart personal finance application that helps users track expenses, manage budgets, and plan their financial goals. This application provides comprehensive insights into spending patterns and wealth management.</p>
-      <button class="view-btn" onclick="openModal(2)">View Project</button>
+      <div class="project-buttons">
+        <button class="view-btn" onclick="window.open('https://moneymanager-fqn5qziq9-rohanbm694-9727s-projects.vercel.app')">View Project</button>
+        <button class="about-btn" onclick="openModal(2)">About</button>
+      </div>
     </div>
     <div class="project-card">
       <h3>Namma Kudla Website</h3>
-      <p>An innovative platform for managing and exploring the lore and history of various projects and systems. This application helps teams maintain comprehensive documentation and historical records.</p>
-      <button class="view-btn" onclick="openModal(3)">View Project</button>
-    </div>
-    <div class="project-card empty-card">
-      <div class="placeholder-content">
-        <i class="fas fa-plus"></i>
-        <h3>Add New Project</h3>
-        <p>Click to add your next project</p>
-      </div>
-    </div>
-    <div class="project-card empty-card">
-      <div class="placeholder-content">
-        <i class="fas fa-plus"></i>
-        <h3>Add New Project</h3>
-        <p>Click to add your next project</p>
-      </div>
-    </div>
-    <div class="project-card empty-card">
-      <div class="placeholder-content">
-        <i class="fas fa-plus"></i>
-        <h3>Add New Project</h3>
-        <p>Click to add your next project</p>
-      </div>
-    </div>
-    <div class="project-card empty-card">
-      <div class="placeholder-content">
-        <i class="fas fa-plus"></i>
-        <h3>Add New Project</h3>
-        <p>Click to add your next project</p>
+      <div class="project-buttons">
+        <button class="view-btn" onclick="window.open(' https://rohanbm19.github.io/nammakudla/')">View Project</button>
+        <button class="about-btn" onclick="openModal(2)">About</button>
       </div>
     </div>
   </section>
@@ -110,20 +82,6 @@
           "Detailed analysis reports"
         ],
         tech: "JavaScript, React, APIs, Machine Learning"
-      },
-      {
-        title: "Todo Application",
-        image: "todo.png",
-        description: "A comprehensive todo application with full CRUD functionality. Users can create, read, update, and delete tasks with features for filtering, sorting, and priority management.",
-        features: [
-          "Add, edit, delete tasks",
-          "Filter by status",
-          "Priority levels",
-          "Due date tracking",
-          "Local storage persistence",
-          "Search functionality"
-        ],
-        tech: "HTML5, CSS3, JavaScript, LocalStorage"
       },
       {
         title: "Money Manager",
