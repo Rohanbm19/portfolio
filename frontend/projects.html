@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h2>My Portfolio</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section id="projects" class="projects-grid">
+    <div class="project-card">
+      <h3>Fake News Detector</h3>
+      <div class="project-buttons">
+        <button class="view-btn" onclick="window.open(' https://rohanbm19.github.io/gitfakenews/')">View Project</button>
+        <button class="about-btn" onclick="openModal(0)">About</button>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Money Manager</h3>
+      <div class="project-buttons">
+        <button class="view-btn" onclick="window.open('https://moneymanager-fqn5qziq9-rohanbm694-9727s-projects.vercel.app')">View Project</button>
+        <button class="about-btn" onclick="openModal(1)">About</button>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Namma Kudla Website</h3>
+      <div class="project-buttons">
+        <button class="view-btn" onclick="window.open(' https://rohanbm19.github.io/nammakudla/')">View Project</button>
+        <button class="about-btn" onclick="openModal(2)">About</button>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>AI Study-Planner</h3>
+      <div class="project-buttons">
+        <button class="view-btn" onclick="window.open('https://study-planner-8gqr.vercel.app')">View Project</button>
+        <button class="about-btn" onclick="openModal(3)">About</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Project Details -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <div class="modal-body">
+        <h2 id="modalTitle"></h2>
+        <div class="modal-images">
+          <img id="modalImage" src="" alt="Project Image">
+        </div>
+        <div class="modal-description">
+          <h3>Project Details</h3>
+          <p id="modalDescription"></p>
+          <h3>Features</h3>
+          <ul id="modalFeatures"></ul>
+          <h3>Technologies Used</h3>
+          <p id="modalTech"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 My Portfolio. All rights reserved. | Designed & Built with <span style="color: #1976D2;">♥</span> by <a href="#">Rohan</a></p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
