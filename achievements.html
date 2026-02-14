@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Achievements - My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -12,7 +12,6 @@
     <h2>My Portfolio</h2>
     <nav>
       <a href="index.html">Home</a>
-  
       <a href="projects.html">Projects</a>
       <a href="achievements.html" class="active">Achievements</a>
       <a href="contact.html">Contact</a>
@@ -50,17 +49,17 @@
     <h2 style="text-align: center; margin-bottom: 30px; font-size: 2em;">Certificates & Credentials</h2>
     <div class="certificates-grid">
       <div class="certificate-card" onclick="openCertModal(0)" style="cursor: pointer;">
-        <img src="nitk.png" alt="JavaScript Mastery Certificate">
+        <img src="images/nitk.png" alt="JavaScript Mastery Certificate">
       </div>
       
       <div class="certificate-card" onclick="openCertModal(2)" style="cursor: pointer;">
-        <img src="tiara.jpg" alt="Full Stack Development Certificate">
+        <img src="images/tiara.jpg" alt="Full Stack Development Certificate">
       </div>
       <div class="certificate-card" onclick="openCertModal(3)" style="cursor: pointer;">
-        <img src="cer.jpg" alt="Cloud Computing Certificate">
+        <img src="images/cer.jpg" alt="Cloud Computing Certificate">
       </div>
       <div class="certificate-card" onclick="openCertModal(4)" style="cursor: pointer;">
-        <img src="sosc.jpeg" alt="Techsprint Hackathon Certificate">
+        <img src="images/sosc.jpeg" alt="Techsprint Hackathon Certificate">
       </div>
     </div>
   </section>
@@ -81,55 +80,6 @@
     <p>&copy; 2024 My Portfolio. All rights reserved. | Designed & Built with <span style="color: #1976D2;">♥</span> by <a href="#">Rohan</a></p>
   </footer>
 
-  <script>
-    const certificateData = [
-      {
-        image: "nitk.png"
-      },
-      {
-        image: "r.jpeg"
-      },
-      {
-        image: "tiara.jpg"
-      },
-      {
-        image: "cer.jpg"
-      },
-      {
-        image: "sosc.jpeg"
-      }
-    ];
-
-    function openCertModal(index) {
-      const cert = certificateData[index];
-      document.getElementById('certImage').src = cert.image;
-      document.getElementById('certModal').style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeCertModal() {
-      document.getElementById('certModal').style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('certModal');
-      if (event.target == modal) {
-        closeCertModal();
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('nav a').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPage) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    });
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
