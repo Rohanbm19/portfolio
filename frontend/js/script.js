@@ -166,7 +166,7 @@ function handleSubmit(event) {
 }
 
 
-fetch("https://portfolio-1-qrnm.onrender.com", {
+fetch("https://portfolio-1-qrnm.onrender.com/plan", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
