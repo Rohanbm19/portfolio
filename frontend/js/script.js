@@ -164,3 +164,12 @@ function handleSubmit(event) {
   alert('Thank you for your message! I will get back to you soon.');
   event.target.reset();
 }
+
+
+fetch("https://portfolio-1-qrnm.onrender.com", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ topic }),
+});
