@@ -1,36 +1,32 @@
 require("dotenv").config();
+
 const express = require("express");
-const nodemailer = require("nodemailer");
 const cors = require("cors");
+const { Resend } = require("resend");
 
 const app = express();
-
 app.use(cors());
 app.use(express.json());
 
-// Test route
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 app.get("/", (req, res) => {
   res.send("Server is running 🚀");
 });
 
-// EMAIL ROUTE
 app.post("/send-email", async (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email } = req.body;
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // You receive here
+    await resend.emails.send({
+      from: "onboarding@resend.dev", // default test sender
+      to: "yourgmail@gmail.com",     // YOU receive here
       subject: "New Portfolio Contact",
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      html: `
+        <h2>New Contact Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+      `,
     });
 
     res.status(200).json({ message: "Email sent successfully" });

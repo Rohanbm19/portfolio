@@ -157,35 +157,43 @@ window.onclick = function(event) {
     closeCertModal();
   }
 }
+// ===============================
+// CONTACT FORM FUNCTION
+// ===============================
+
 async function handleSubmit(event) {
   event.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    alert("Please fill all fields.");
+    return;
+  }
 
   try {
-    const response = await fetch(
-      "http://localhost:5000/send-email",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      }
-    );
+    const response = await fetch("https://portfolio-1-qrnm.onrender.com/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
 
     const data = await response.json();
 
     if (response.ok) {
-      alert("Message sent successfully!");
-      event.target.reset();
+      alert("Message sent successfully! 🚀");
+      document.getElementById("contactForm").reset();
     } else {
-      alert("Error sending message");
+      alert("Failed to send message.");
+      console.error(data);
     }
+
   } catch (error) {
     console.error(error);
-    alert("Server error");
+    alert("Server not responding.");
   }
 }

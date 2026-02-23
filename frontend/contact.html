@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
   <header>
     <h2>My Portfolio</h2>
     <nav>
       <a href="index.html">Home</a>
-     
       <a href="projects.html">Projects</a>
       <a href="achievements.html">Achievements</a>
       <a href="contact.html" class="active">Contact</a>
@@ -21,25 +21,48 @@
 
   <section id="contact" class="contact-section">
     <h2>Get In Touch</h2>
-    <p>Have a question or want to collaborate? Feel free to reach out!</p>
-    
-    <form class="contact-form" onsubmit="handleSubmit(event)">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" placeholder="Your message here..." rows="5" required></textarea>
+    <p>Have a question or want to collaborate? Send me a message below!</p>
+
+    <!-- CONTACT FORM -->
+    <form id="contactForm" onsubmit="handleSubmit(event)" class="contact-form">
+      
+      <input 
+        type="text" 
+        id="name" 
+        placeholder="Your Name" 
+        required
+      >
+
+      <input 
+        type="email" 
+        id="email" 
+        placeholder="Your Email" 
+        required
+      >
+
+      <textarea 
+        id="message" 
+        placeholder="Your Message" 
+        rows="5" 
+        required
+      ></textarea>
+
       <button type="submit">Send Message</button>
     </form>
 
+    <!-- SOCIAL LINKS -->
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/your-profile" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-     
-      
+      <a href="https://www.linkedin.com/in/your-profile" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/your-profile" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Rohan. All rights reserved.
+    <p>© 2025 Rohan BM. All rights reserved.</p>
   </footer>
 
   <script src="js/script.js"></script>
