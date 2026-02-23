@@ -157,19 +157,35 @@ window.onclick = function(event) {
     closeCertModal();
   }
 }
-
-// Contact Form
-function handleSubmit(event) {
+async function handleSubmit(event) {
   event.preventDefault();
-  alert('Thank you for your message! I will get back to you soon.');
-  event.target.reset();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  try {
+    const response = await fetch(
+      "http://localhost:5000/send-email",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert("Message sent successfully!");
+      event.target.reset();
+    } else {
+      alert("Error sending message");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Server error");
+  }
 }
-
-
-fetch("https://portfolio-1-qrnm.onrender.com/plan", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ topic }),
-});
