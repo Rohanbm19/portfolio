@@ -612,8 +612,11 @@ button:active {
 
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 @media (max-width: 1024px) {
@@ -628,6 +631,8 @@ button:active {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   background: white;
+  width: 100%;
+  max-width: 280px;
 }
 
 .certificate-card:hover {
