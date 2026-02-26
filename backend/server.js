@@ -20,7 +20,7 @@ app.post("/send-email", async (req, res) => {
   try {
     await resend.emails.send({
       from: "onboarding@resend.dev", // default test sender
-      to: "yourgmail@gmail.com",     // YOU receive here
+      to: "rohanbm694@gmail.com",     // YOU receive here
       subject: "New Portfolio Contact",
       html: `
         <h2>New Contact Submission</h2>
