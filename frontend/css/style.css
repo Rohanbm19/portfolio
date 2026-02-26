@@ -181,12 +181,15 @@ section:not(.skills-section-full) {
 }
 
 #home img {
-  border-radius: 15px;
+  border-radius: 50%;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   flex: 1;
   max-width: 100%;
   height: auto;
   min-height: auto;
+  width: 200px;
+  height: 500px;
+  object-fit: cover;
 }
 
 @media (max-width: 1024px) {
