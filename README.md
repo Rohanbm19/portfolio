@@ -70,7 +70,6 @@ portfolio/
  1️⃣ Clone Repository
 
 git clone https://github.com/Rohanbm19/portfolio  
-cd your-repo-name  
 
 ---
 
